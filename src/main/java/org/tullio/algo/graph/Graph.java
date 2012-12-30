@@ -26,7 +26,9 @@ public final class Graph<V> implements Iterable<Edge<V>> {
 			final int numberOfVertices,
 			final List<Edge<V>> edgeList) {
 		n = numberOfVertices;
-		edges = Collections.unmodifiableList(edgeList);
+		final List<Edge<V>> tmp = new ArrayList<>(edgeList);
+		Collections.sort(tmp);
+		edges = Collections.unmodifiableList(tmp);
 	}
 	
 	public Graph(
