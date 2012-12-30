@@ -44,7 +44,7 @@ public class ClusteringTest {
                         Integer.parseInt(tokens[1]),
                         Integer.parseInt(tokens[2])));
             }
-            return gb.build(new CostComparator<Integer>());
+            return gb.build();
 		} finally {
 			stream.close();
 		}
