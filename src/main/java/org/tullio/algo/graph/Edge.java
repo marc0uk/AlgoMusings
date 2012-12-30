@@ -1,6 +1,12 @@
 package org.tullio.algo.graph;
 
-public class Edge<V> {
+/**
+ * A weighted edge in a undirected graph. Implements ascending cost
+ * total order.
+ *
+ * @param <V> Type of the vertex.
+ */
+public class Edge<V> implements Comparable<Edge<V>> {
 
 	private final V u;
 	private final V v;
@@ -22,6 +28,15 @@ public class Edge<V> {
 	
 	public int cost() {
 		return cost;
+	}
+	
+	@Override
+	public int compareTo(Edge<V> o) {
+		return cost < o.cost ?
+				-1 :
+				cost > o.cost ?
+					1 :
+					0;
 	}
 	
 	@Override
