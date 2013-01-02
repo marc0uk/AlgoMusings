@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class KnapSackProblem {
+public class KnapSackProblem implements Iterable<KspItem> {
 
 	private final int capacity;
 	private final List<KspItem> items;
@@ -32,6 +32,6 @@ public class KnapSackProblem {
 	
 	@Override
 	public String toString() {
-		return String.format("KSP[%d,%d]", items.size(), capacity);
+		return String.format("KSP[N=%d,W=%d]", items.size(), capacity);
 	}
 }
