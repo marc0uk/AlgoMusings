@@ -22,7 +22,9 @@ class KspUtil {
                 	throw new IOException("Invalid line, expecting 2 tokens:\n" + line);
                 }
             	items.add(new KspItem(
-            			Integer.parseInt(tokens[0]), 
+            			// Value
+            			Integer.parseInt(tokens[0]),
+            			// Weight
             			Integer.parseInt(tokens[1])));
             }
             return new KnapSackProblem(sackSize, items);
