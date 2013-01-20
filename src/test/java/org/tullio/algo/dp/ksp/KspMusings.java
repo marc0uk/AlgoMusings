@@ -1,7 +1,7 @@
-package org.tullio.algo.dp;
+package org.tullio.algo.dp.ksp;
 
-import static org.tullio.algo.dp.KspUtil.readExpected;
-import static org.tullio.algo.dp.KspUtil.readInput;
+import static org.tullio.algo.dp.ksp.KspUtil.readExpected;
+import static org.tullio.algo.dp.ksp.KspUtil.readInput;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,6 +11,10 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.tullio.algo.dp.ksp.KnapSackProblem;
+import org.tullio.algo.dp.ksp.KspItem;
+import org.tullio.algo.dp.ksp.KspSolution;
+import org.tullio.algo.dp.ksp.MatrixKspSolver;
 
 public class KspMusings {
 	

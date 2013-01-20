@@ -1,4 +1,4 @@
-package org.tullio.algo.dp;
+package org.tullio.algo.dp.ksp;
 
 import java.util.HashMap;
 import java.util.Map;

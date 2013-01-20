@@ -1,4 +1,4 @@
-package org.tullio.algo.dp;
+package org.tullio.algo.dp.ksp;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,6 +6,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.tullio.algo.dp.ksp.KnapSackProblem;
+import org.tullio.algo.dp.ksp.KspItem;
+import org.tullio.algo.dp.ksp.KspSolution;
 
 class KspUtil {
 	

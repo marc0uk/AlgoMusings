@@ -1,11 +1,15 @@
-package org.tullio.algo.dp;
+package org.tullio.algo.dp.ksp;
 
-import static org.tullio.algo.dp.KspUtil.readExpected;
-import static org.tullio.algo.dp.KspUtil.readInput;
+import static org.tullio.algo.dp.ksp.KspUtil.readExpected;
+import static org.tullio.algo.dp.ksp.KspUtil.readInput;
 
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.tullio.algo.dp.ksp.KnapSackProblem;
+import org.tullio.algo.dp.ksp.KspSolution;
+import org.tullio.algo.dp.ksp.MatrixKspSolver;
+import org.tullio.algo.dp.ksp.RecursiveKspSolver;
 
 public class KnapSackProblemTest {
 	

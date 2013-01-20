@@ -1,4 +1,4 @@
-package org.tullio.algo.dp;
+package org.tullio.algo.dp.ksp;
 
 
 public class MatrixKspSolver implements KspSolver {
