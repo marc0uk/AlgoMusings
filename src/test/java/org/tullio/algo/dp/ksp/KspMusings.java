@@ -20,14 +20,14 @@ public class KspMusings {
 	
 	private static final Logger LOG = LoggerFactory.getLogger(KspMusings.class);
 	
-	private static final String KSP_EX1 = "org/tullio/algo/dp/kspMusing1.txt";
-	private static final String KSP_EX2 = "org/tullio/algo/dp/kspMusing2.txt";
+	private static final String KSP_EX1 = "org/tullio/algo/dp/ksp/kspMusing1.txt";
+	private static final String KSP_EX2 = "org/tullio/algo/dp/ksp/kspMusing2.txt";
 	
-	private static final String KSP_TEST_1 = "org/tullio/algo/dp/knapTest1.txt";
-	private static final String KSP_TEST_SOL_1 = "org/tullio/algo/dp/knapTest1.sol";
+	private static final String KSP_TEST_1 = "org/tullio/algo/dp/ksp/knapTest1.txt";
+	private static final String KSP_TEST_SOL_1 = "org/tullio/algo/dp/ksp/knapTest1.sol";
 	
-	private static final String KSP_TEST_2 = "org/tullio/algo/dp/knapTest2.txt";
-	private static final String KSP_TEST_SOL_2 = "org/tullio/algo/dp/knapTest2.sol";
+	private static final String KSP_TEST_2 = "org/tullio/algo/dp/ksp/knapTest2.txt";
+	private static final String KSP_TEST_SOL_2 = "org/tullio/algo/dp/ksp/knapTest2.sol";
 
 	@Ignore
 	@Test

@@ -13,14 +13,14 @@ import org.tullio.algo.dp.ksp.RecursiveKspSolver;
 
 public class KnapSackProblemTest {
 	
-	private static final String KSP_SMALL = "org/tullio/algo/dp/knapSmall.txt";
-	private static final String KSP_LARGE = "org/tullio/algo/dp/knapLarge.txt";
+	private static final String KSP_SMALL = "org/tullio/algo/dp/ksp/knapSmall.txt";
+	private static final String KSP_LARGE = "org/tullio/algo/dp/ksp/knapLarge.txt";
 	
-	private static final String KSP_TEST_1 = "org/tullio/algo/dp/knapTest1.txt";
-	private static final String KSP_TEST_SOL_1 = "org/tullio/algo/dp/knapTest1.sol";
+	private static final String KSP_TEST_1 = "org/tullio/algo/dp/ksp/knapTest1.txt";
+	private static final String KSP_TEST_SOL_1 = "org/tullio/algo/dp/ksp/knapTest1.sol";
 	
-	private static final String KSP_TEST_2 = "org/tullio/algo/dp/knapTest2.txt";
-	private static final String KSP_TEST_SOL_2 = "org/tullio/algo/dp/knapTest2.sol";
+	private static final String KSP_TEST_2 = "org/tullio/algo/dp/ksp/knapTest2.txt";
+	private static final String KSP_TEST_SOL_2 = "org/tullio/algo/dp/ksp/knapTest2.sol";
 		
 	@Test
 	public void validateMatrixSolution1() throws Exception {
