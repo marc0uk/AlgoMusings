@@ -19,24 +19,22 @@ public class TspMusings {
 	private static final String TSP_25 = "org/tullio/algo/dp/tsp/tsp25.txt";
 	
 	@Test
-	@Ignore
 	public void tsp4Cities() throws IOException {
 		solveAndValidate(TSP_4, 22D);
 	}
 	
 	@Test
-	@Ignore
 	public void tsp5Cities() throws IOException {
 		solveAndValidate(TSP_5, 15D);
 	}
 	
 	@Test
-	@Ignore
 	public void tsp6Cities() throws IOException {
 		solveAndValidate(TSP_6, 32D);
 	}
 	
 	@Test
+	@Ignore
 	public void tsp25Cities() throws IOException {
 		final double result = solve(TSP_25);
 		System.out.println(String.format("Solution: %.3f", result));
