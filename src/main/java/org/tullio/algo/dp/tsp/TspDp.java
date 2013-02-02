@@ -8,7 +8,6 @@ import java.util.Map;
 
 public class TspDp {
 	
-	private final TspSetFormatter formatter;
 	private final List<TspCity> cities;
 	private final int numCities;
 	private final Map<Integer, List<TspSet>> setsBySize;
@@ -21,8 +20,6 @@ public class TspDp {
 		setsBySize = allocateMap(numCities);
 		builder = new TspSetBuilder(numCities);
 		A = initialiseMap();
-		//
-		formatter = new TspSetFormatter(numCities);
 	}
 	
 	public double solve() {
@@ -73,24 +70,20 @@ public class TspDp {
 	private void computeSolutionMatrix() {
 		// Loop on the sub-problem size
 		for (int m=2; m<=numCities; m++) {
-//			System.out.println("Solving form m=" + m);
+			final long start = System.currentTimeMillis();
 			final List<TspSet> sets = setsBySize.get(m);
-//			System.out.println(String.format("  Number of subproblems of size %d : %d", 
-//					m, sets.size()));
+			System.out.println(String.format("%d subproblems of size %d", sets.size(), m));
 			// Loop on the sets of size m containing first city
 			for (final TspSet set : sets) {
 				// Loop on each city of the current set.
-//				System.out.println(String.format("    Subset[%d] %s", set.asIdx(), formatter.print(set)));
 				for (Integer j : set) {
 					if (j != 1) {
-//						System.out.println(String.format("      Computing A[%d][%d]", set.asIdx(), j));
 						A[set.asIdx()][j] = computeMin(set, j.byteValue());
-					} else {
-//						System.out.println("      j=1 : skipping");
 					}
 				}
 			}
-			System.out.println("Done problem size: " + m);
+			final long elapsed = System.currentTimeMillis() - start;
+			System.out.println(String.format("Problem size %d completed in %.5f [sec]", m, (elapsed/1000D)));
 		}
 	}
 	
@@ -112,44 +105,17 @@ public class TspDp {
 		final TspCity jCity = cities.get(j - 1);
 		double min = Double.POSITIVE_INFINITY;
 		final TspSet setMinusJ = set.without(j);
-		final String setId = formatter.print(setMinusJ);
-//		System.out.println(String.format("        %s-{%d}=%s", formatter.print(set), j, setId));
 		for (Integer k : set) {
 			if (k != j) {
 				final TspCity kCity = cities.get(k - 1);
 				final double dist = kCity.distance(jCity);
 				final double val = A[setMinusJ.asIdx()][k] + dist;
-//				System.out.println(String.format("          Dist from %s to %s = %.5f", kCity, jCity, dist));
-//				System.out.println(String.format("          Checking A{%s}[%d][%d]+C_{%d,%d}=(%.1f + %.1f) < %.1f", 
-//						setId, 
-//						setMinusJ.asIdx(),
-//						k,
-//						k,
-//						j,
-//						A[setMinusJ.asIdx()][k],
-//						dist,
-//						min));
 				if (val < min) {
 					min = val;
-//					System.out.println("            yes");
-				} else {
-//					System.out.println("            no");
 				}
 			}
 		}
 		return min;
 	}
 	
-	private static class TspSetFormatter {
-		
-		private String format;
-		
-		public TspSetFormatter(final int numCities) {
-			format = "%" + String.format("%ds", numCities);
-		}
-		
-		String print(final TspSet set) {
-			return String.format(format, Integer.toBinaryString(set.asIdx())).replace(' ', '0');
-		}
-	}
 }
