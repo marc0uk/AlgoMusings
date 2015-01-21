@@ -53,19 +53,15 @@ public class TspMusings {
 	}
 	
 	private double solve(final String input) {
-		try {
-			final long start = System.currentTimeMillis();
-			final TspDp tsp = loadProblem(ClassLoader.getSystemResourceAsStream(input));
-			final double actual = tsp.solve();
-			final long elapsed = System.currentTimeMillis() - start;
-			System.out.println(String.format("Solution in: %.5f[sec]", (elapsed/1000D)));
-			return actual;
-		} catch (IOException e) {
-			throw new RuntimeException("Failed", e);
-		}
+		final long start = System.currentTimeMillis();
+		final TspDp tsp = loadProblem(ClassLoader.getSystemResourceAsStream(input));
+		final double actual = tsp.solve();
+		final long elapsed = System.currentTimeMillis() - start;
+		System.out.println(String.format("Solution in: %.5f[sec]", (elapsed/1000D)));
+		return actual;
 	}
 
-	private static TspDp loadProblem(final InputStream stream) throws IOException {
+	private static TspDp loadProblem(final InputStream stream) {
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(stream))) {
 			final int numCities = Integer.parseInt(br.readLine().trim());
 			String line;

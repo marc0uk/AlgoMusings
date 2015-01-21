@@ -76,7 +76,7 @@ public class ObstMusing {
 		return weight;
 	}
 
-	private static double[] prob = {0, 0.05, 0.40, 0.08, 0.04, 0.10, 0.10, 0.23};
-	
+	//private static double[] prob = {0, 0.05, 0.40, 0.08, 0.04, 0.10, 0.10, 0.23};
+	private static double[] prob = {0, 0.2, 0.05, 0.17, 0.1, 0.2, 0.03, 0.25};
 	
 }
